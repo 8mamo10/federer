@@ -1,12 +1,18 @@
 const int LED = 13;
+const int BUTTON = 7;
+
+int val = 0;
 
 void setup() {
   pinMode(LED, OUTPUT);
+  pinMode(BUTTON, INPUT);
 }
 
 void loop() {
-  digitalWrite(LED, HIGH);
-  delay(1000);
-  digitalWrite(LED, LOW);
-  delay(1000);
+  val = digitalRead(BUTTON);
+  if (val == HIGH) {
+    digitalWrite(LED, HIGH);
+  } else {
+    digitalWrite(LED, LOW);
+  }
 }
