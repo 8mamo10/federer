@@ -15,7 +15,7 @@ void loop() {
 static char gBuf[255];
 
 void onRecv(int inNumOfRecvBytes) {
-  sprintf(gBuf, "NumOfBytes=%d", inNumOfRecvBytes);
+  sprintf(gBuf, "NumOfBytes=%d : ", inNumOfRecvBytes);
   Serial.print(gBuf);
 
   while(Wire.available() > 0) {
